@@ -12,10 +12,12 @@ function Home() {
   ];
 
   return (
-    <div className="flex min-h-screen p-6 retro-container old-crt-monitor text-[var(--primary-color)] relative">
+    <div className="flex flex-col md:flex-row min-h-screen p-6 retro-container old-crt-monitor text-[var(--primary-color)] relative">
+
       
       {/* Menú lateral */}
-      <div className="w-1/4 pr-6 reveal-slow">
+      <div className="w-full md:w-1/4 pr-6 reveal-slow">
+
         <h2 className="text-xl font-bold mb-4">Menu</h2>
         {sections.map((section) => (
           <button
@@ -35,7 +37,8 @@ function Home() {
       </div>
 
       {/* Contenido derecho */}
-      <div className="w-3/4 border-l border-[var(--primary-color)] pl-6">
+      <div className="w-full md:w-3/4 border-t md:border-t-0 md:border-l border-[var(--primary-color)] pl-6">
+
         {activeSection === 'Skills' && <p>Aquí irán tus habilidades.</p>}
         {activeSection === 'Projects' && <p>Aquí mostrarás tus proyectos.</p>}
         {activeSection === 'About' && <p>Sobre ti, biografía y enfoque.</p>}
