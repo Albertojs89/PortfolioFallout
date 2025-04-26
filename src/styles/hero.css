@@ -1,0 +1,84 @@
+.retro-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    /* border: 2px solid var(--primary-color); */ /* <- ya comentado */
+    color: var(--primary-color);
+    mask-image: linear-gradient(to bottom, #0005 50%, #000 50%);
+    mask-size: 100% 2px;
+    text-shadow: 0 0 0.5rem;
+}
+
+
+header,
+footer {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+main {
+    overflow: hidden;
+}
+
+section {
+    height: 100%;
+    overflow: hidden auto;
+    margin: 1rem 0;
+}
+
+/* efecto monitor */
+@keyframes crtAnimation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 5000%;
+  }
+}
+
+.old-crt-monitor {
+  box-shadow: inset 0px 0px 4rem rgba(0, 255, 0, 0.2); /* sombra más grande y verdosa */
+  background-image: 
+    linear-gradient(0deg, rgba(0, 255, 0, 0.03) 5%, transparent 5%, transparent 10%, rgba(0, 255, 0, 0.03) 10%, transparent 15%, transparent 20%), 
+    linear-gradient(0deg, #0000 10%, rgba(0, 255, 0, 0.05) 90%, #0000 100%);
+  background-size: 100% 4px, 100% 80%;
+  animation: crtAnimation 120s linear infinite;
+}
+/* efecto aparicion arriba abajo hero */
+@keyframes revealFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-slow {
+  animation: revealFromTop 1.5s ease-out forwards;
+}
+
+/* aparicion escrito maquina */
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.typewriter-42 {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--primary-color);
+  animation: typewriter 3s steps(42) 1 normal both;
+}
+

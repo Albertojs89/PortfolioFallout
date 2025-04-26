@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+
+:root {
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    --primary-color: #ffd52c;
+    --secondary-color: #ff5c00;
+    --tertiary-color: #c72d04;
+    --background-color: #111!important;
+    scrollbar-color: var(--primary-color) var(--secondary-color);
+    font-size: clamp(18px, 3vw, 30px);
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    margin: 0;
+    mask-image: linear-gradient(to bottom, #0005 50%, #000 50%);
+    mask-size: 100% 2px;
+}
