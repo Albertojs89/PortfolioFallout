@@ -41,7 +41,8 @@ function Home() {
       </div>
 
       {/* Contenido derecho */}
-      <div className="w-full md:w-3/4 border-t md:border-t-0 md:border-l border-[var(--primary-color)] pl-6">
+      <div className="w-full md:w-3/4 border-t md:border-t-0 md:border-l border-[var(--primary-color)] pl-6 overflow-y-auto max-h-[80vh]">
+
 
         {activeSection === 'Skills' && (
       <div className="flex flex-col items-center">
