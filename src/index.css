@@ -19,3 +19,27 @@ body {
     mask-image: linear-gradient(to bottom, #0005 50%, #000 50%);
     mask-size: 100% 2px;
 }
+/* todos los icon verdes por defecto */
+.retro-icon {
+   filter: brightness(0) saturate(100%) invert(84%) sepia(67%) saturate(3457%) hue-rotate(1deg) brightness(107%) contrast(101%);
+  transition: filter 0.3s ease;
+  display: inline-block;
+}
+.button-hover:hover .retro-icon {
+  filter: brightness(0) saturate(100%) invert(7%) sepia(9%) saturate(582%) hue-rotate(169deg) brightness(95%) contrast(85%);
+}
+/* efecto aparicion arriba abajo hero */
+@keyframes revealFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-slow {
+  animation: revealFromTop 1.5s ease-out forwards;
+}
