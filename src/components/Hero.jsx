@@ -40,7 +40,7 @@ function Hero() {
         {/* Bloque reservado para el muñeco */}
         <div className="w-72 h-72 flex items-center justify-center">
           {/* Aquí más adelante pondremos tu imagen o GIF */}
-          {/* <img src="/ruta/a/tu/imagen.gif" alt="Pitboy" className="w-full h-full object-contain" /> */}
+          {/* <img src="/skills.png" alt="Pitboy" className="w-full h-full object-contain" /> */}
         </div>
 
       </div>
