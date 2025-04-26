@@ -30,7 +30,7 @@ function Hero() {
           </p>
 
           <Link
-            to="/start"
+            to="/home"
             className="inline-block px-6 py-3 border-2 border-[var(--primary-color)] text-[var(--primary-color)] hover:bg-[var(--primary-color)] hover:text-[var(--background-color)] transition-colors duration-300"
           >
             Get Started
