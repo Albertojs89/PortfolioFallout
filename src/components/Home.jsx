@@ -7,6 +7,31 @@ import { SiTailwindcss, SiVite, SiAdobephotoshop, SiAdobeillustrator } from 'rea
 
 function Home() {
   const [activeSection, setActiveSection] = useState(null);
+  //Proyectos
+  const projects = [
+  {
+    id: 1,
+    title: 'Bitepixe|PortalGames',
+    description: 'Una de una de mis pasiones, los videojuegos, un rincón de noticias y opiniones sobre el mundo de los videojuegos.',
+    image: '/project1.jpg',
+    url: 'https://albertojs89.alwaysdata.net/BITEPIXE/index.php'
+  },
+  {
+    id: 2,
+    title: 'Nombre del Proyecto 2',
+    description: 'Breve descripción del segundo proyecto.',
+    image: '/ruta/a/la/imagen2.png',
+    url: 'https://proyecto2.com'
+  },
+  {
+    id: 3,
+    title: 'Nombre del Proyecto 3',
+    description: 'Breve descripción del tercer proyecto.',
+    image: '/ruta/a/la/imagen3.png',
+    url: 'https://proyecto3.com'
+  },
+  // Puedes seguir añadiendo más proyectos aquí
+];
 
   const sections = [
     { icon: '🛠', label: 'Skills' },
@@ -53,7 +78,8 @@ function Home() {
         </div>
 
         {/* Iconos de habilidades */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 text-[var(--primary-color)]">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 text-[var(--primary-color)] pb-10">
+
           
           {/* HTML */}
           <div className="relative group">
@@ -154,12 +180,60 @@ function Home() {
         </div>
 
       </div>
+        )}
+
+
+      
+      
+
+     {activeSection === 'Projects' && (
+        <div className="space-y-16 overflow-y-auto max-h-screen pr-4 custom-scroll">
+          
+          {/* GIF principal centrado */}
+          <div className="flex justify-center">
+            <div className="w-48 h-48 mb-6 glitch-tooltip">
+              <img
+                src="/projects.png"
+                alt="Projects Animation"
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+
+          {projects.map((project) => (
+            <div
+              key={project.id}
+              className="flex flex-col items-center group transition-transform duration-700 ease-in-out"
+            >
+              {/* Imagen o vídeo clicable */}
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full max-w-md aspect-video overflow-hidden border-2 border-[var(--primary-color)] group-hover:shadow-[0_0_20px_var(--primary-color)] transition-shadow duration-300"
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover glitch-tooltip"
+                />
+              </a>
+
+              {/* Título y descripción */}
+              <h3 className="mt-4 text-xl font-bold text-[var(--primary-color)]">{project.title}</h3>
+              <p className="mt-2 text-center max-w-md text-[var(--primary-color)] reveal-from-bottom">
+                {project.description}
+              </p>
+            </div>
+          ))}
+
+        </div>
       )}
 
 
 
 
-        {activeSection === 'Projects' && <p>Aquí mostrarás tus proyectos.</p>}
+
         {activeSection === 'About' && <p>Sobre ti, biografía y enfoque.</p>}
         {activeSection === 'Contact' && <p>Formulario o redes de contacto.</p>}
       </div>
